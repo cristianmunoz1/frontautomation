@@ -12,4 +12,6 @@ public class LoginPage extends PageObject {
     public static final Target FORGOT_PASSWORD_LINK = Target.the("Forgot password link").locatedBy("//*[@id=\"__next\"]/div/main/div/div/div/div/a");
     public static final Target REGISTER_BUTTON = Target.the("Register button in login page").locatedBy("//*[@id=\"__next\"]/div/main/div/div/div/div/button");
     public static final Target INVALID_CREDENTIALS_MESSAGE = Target.the("Invalid credentials message").locatedBy("/html/body/div[1]/div/main/div/div/form/div[2]/div/div[5]/p");
+    public static final Target EMPTY_EMAIL_MESSAGE = Target.the("Empty email message").locatedBy("/html/body/div[1]/div/main/div/div/form/div[2]/div/div[2]/p");
+    public static final Target EMPTY_PASSWORD_MESSAGE = Target.the("Empty password message").locatedBy("/html/body/div[1]/div/main/div/div/form/div[2]/div/div[4]/p");
 }

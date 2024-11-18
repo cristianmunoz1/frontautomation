@@ -67,4 +67,14 @@ public class LoginStepDefinitions {
     public void iShouldSeeAnErrorMessage() {
         Ensure.that(LoginPage.INVALID_CREDENTIALS_MESSAGE).isDisplayed();
     }
+
+    @Then("I should see the empty email message")
+    public void iShouldSeeTheEmptyEmailMessage() {
+        Ensure.that(LoginPage.EMPTY_EMAIL_MESSAGE).isDisplayed();
+    }
+
+    @Then("I should see the empty password message")
+    public void iShouldSeeTheEmptyPasswordMessage() {
+        Ensure.that(LoginPage.EMPTY_PASSWORD_MESSAGE).isDisplayed();
+    }
 }

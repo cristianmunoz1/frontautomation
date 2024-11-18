@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Login functionality" skipped="0" tests="2" time="6.61" timestamp="2024-11-17 09:37:07"><testcase name="Successful login with valid credentials"><failure message="Expected: Logged user landing permissions that is displayed&#10;Actual:   web element is not displayed" type="java.lang.AssertionError">Expected: Logged user landing permissions that is displayed
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Login functionality" skipped="0" tests="3" time="8.35" timestamp="2024-11-17 11:40:36"><testcase name="Successful login with valid credentials"><failure message="Expected: Logged user landing permissions that is displayed&#10;Actual:   web element is not displayed" type="java.lang.AssertionError">Expected: Logged user landing permissions that is displayed
 Actual:   web element is not displayed</failure><system-err>Expected: Logged user landing permissions that is displayed
 Actual:   web element is not displayed
 co.com.udea.autenticacion.moduloauthvirtual.stepdefinitions.LoginStepDefinitions.iShouldSeeTheDashboard(LoginStepDefinitions.java:61)
 worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</system-err></testcase><testcase name="Failed login with invalid credentials"/></testsuite>
+</system-err></testcase><testcase name="Failed login with invalid credentials"/><testcase name="Failed login because empty email"/></testsuite>

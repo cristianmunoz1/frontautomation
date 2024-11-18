@@ -13,7 +13,12 @@ Feature: Login functionality
     When I login with username "invalid" and password "wrong123."
     Then I should see an error message
 
-  Scenario: Incorrect email typed
+  Scenario: Failed login because empty email
     Given I am on the login page
-    When I login with username "julian.google.com.co" and password "Hola123."
-    Then I should see the incorrect email message
+    When I login with username "" and password "Hola123."
+    Then I should see the empty email message
+
+  Scenario: Failed login because empty email
+    Given I am on the login page
+    When I login with username "julian@google.com.co" and password ""
+    Then I should see the empty password message
