@@ -1,6 +1,5 @@
 package co.com.udea.autenticacion.moduloauthvirtual.stepdefinitions;
 
-import co.com.udea.autenticacion.moduloauthvirtual.userinterfaces.LoginPage;
 import co.com.udea.autenticacion.moduloauthvirtual.userinterfaces.RegisterPage;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -14,16 +13,12 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.targets.Target;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.WebDriver;
 
 import java.time.Duration;
 
 import static net.serenitybdd.screenplay.actors.OnStage.setTheStage;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isPresent;
-import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertEquals;
 
 public class RegisterStepDefinitions {
@@ -81,7 +76,58 @@ public class RegisterStepDefinitions {
         String expectedMessage = "Ocurrió un error al guardar la información. Por favor, intente nuevamente.";
         Target registerMessage = Target.the("Message information").locatedBy("/html/body/div[4]/div[1]/p");
 
-        String actualError =registerMessage.resolveFor(actor).getText();
+        String actualError = registerMessage.resolveFor(actor).getText();
         assertEquals(expectedMessage, actualError);
     }
+
+    @Then("I should see the incorrect email message")
+    public void iShouldSeeTheIncorrectEmailMessage() {
+        actor.attemptsTo(
+                Ensure.that(RegisterPage.INCORRECT_EMAIL_ALERT).isDisplayed()
+        );
+    }
+
+    @Then("I should see the incorrect cellphone message")
+    public void iShouldSeeTheIncorrectCellphoneMessage() {
+        actor.attemptsTo(
+                Ensure.that(RegisterPage.INCORRECT_PHONE_ALERT).isDisplayed()
+        );
+    }
+
+    @Then("I should see the incorrect password message")
+    public void iShouldSeeTheIncorrectPasswordMessage() {
+        actor.attemptsTo(
+                Ensure.that(RegisterPage.INCORRECT_PASSWORD_ALERT).isDisplayed()
+        );
+    }
+
+    @When("I type the name {string} and phone number {string} and email {string} and password {string} and don't check the terms and privacy policy")
+    public void iTypeTheNameAndPhoneNumberAndEmailAndPasswordAndCheckTheTermsAndDontCheck(String username, String cellphone, String email, String password) {
+        actor.attemptsTo(
+                Enter.theValue(username).into(RegisterPage.REGISTER_USERNAME_FIELD),
+                Enter.theValue(cellphone).into(RegisterPage.REGISTER_CELLPHONE_FIELD),
+                Enter.theValue(email).into(RegisterPage.REGISTER_EMAIL_FIELD),
+                Enter.theValue(password).into(RegisterPage.REGISTER_PASSWORD_FIELD),
+
+                Click.on(RegisterPage.REGISTER_SUBMIT_BUTTON)
+        );
+    }
+
+    @Then("I should see the no terms accepted message")
+    public void iShouldSeeTheNoTermsAcceptedMessage() {
+        actor.attemptsTo(
+                Ensure.that(RegisterPage.NO_TERMS_ACCEPTED_ALERT).isDisplayed()
+        );
+    }
+
+
+    @Then("I should see the no privacy accepted message")
+    public void iShouldSeeTheNoPrivacyAcceptedMessage() {
+        actor.attemptsTo(
+                Ensure.that(RegisterPage.NO_PRIVACY_ACCEPTED_ALERT).isDisplayed()
+        );
+    }
+
+
+
 }

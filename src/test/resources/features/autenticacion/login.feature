@@ -15,5 +15,5 @@ Feature: Login functionality
 
   Scenario: Incorrect email typed
     Given I am on the login page
-    When I login with username "julian@google.com." and password "Hola123."
-    Then I should see the dashboard
+    When I login with username "julian.google.com.co" and password "Hola123."
+    Then I should see the incorrect email message
