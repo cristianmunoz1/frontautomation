@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Register functionality" skipped="0" tests="2" time="4.64" timestamp="2024-11-17 10:04:54"><testcase name="Successful register in the application"/><testcase name="Unsuccessful register in the application"/></testsuite>

@@ -6,8 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/login.feature",
-        glue = "com.tudominio.stepdefinitions",
-        plugin = {"pretty", "html:target/cucumber-reports"}
+        features = "src/test/resources/features/autenticacion",
+        glue = "co.com.udea.autenticacion.moduloauthvirtual.stepdefinitions"
 )
-public class LoginRunner {}
+public class LoginRunner {
+
+}
